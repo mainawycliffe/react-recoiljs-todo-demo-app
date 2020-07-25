@@ -156,14 +156,14 @@ function ListTodos() {
 
   function toggleTodo(todo: Todo) {
     setTodoList((state) => {
-      const todos = state.map((t) => {
-        if (todo.todo.toLowerCase() === t.todo.toLowerCase()) {
+      const todos = state.map((todoInState) => {
+        if (todo.todo.toLowerCase() === todoInState.todo.toLowerCase()) {
           return {
-            ...t,
-            isDone: !t.isDone,
+            ...todoInState,
+            isDone: !todoInState.isDone,
           };
         }
-        return t;
+        return todoInState;
       });
       return [...todos];
     });
