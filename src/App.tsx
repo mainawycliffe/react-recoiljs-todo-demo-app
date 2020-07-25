@@ -154,31 +154,6 @@ function AddTodos() {
 
 function ListTodos() {
   const todoList = useRecoilValue(todoListState);
-
-  return (
-    <>
-      <h2 className="subtitle is-3">Your Todos</h2>
-      <div className="list is-full is-hoverable">
-        <div
-          style={{
-            cursor: 'pointer',
-          }}
-          className="list-item"
-        >
-          {todoList.map((todo) => (
-            <TodoItem key={todo.todo} todo={todo} />
-          ))}
-        </div>
-      </div>
-    </>
-  );
-}
-
-type TodoItemProps = {
-  todo: Todo;
-};
-
-function TodoItem({ todo }: TodoItemProps) {
   const setTodoList = useSetRecoilState(todoListState);
 
   function toggleTodo(todo: Todo) {
@@ -196,6 +171,31 @@ function TodoItem({ todo }: TodoItemProps) {
     });
   }
 
+  return (
+    <>
+      <h2 className="subtitle is-3">Your Todos</h2>
+      <div className="list is-full is-hoverable">
+        <div
+          style={{
+            cursor: 'pointer',
+          }}
+          className="list-item"
+        >
+          {todoList.map((todo) => (
+            <TodoItem key={todo.todo} todo={todo} toggleTodo={toggleTodo} />
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
+type TodoItemProps = {
+  todo: Todo;
+  toggleTodo: (todo: Todo) => void;
+};
+
+function TodoItem({ todo, toggleTodo }: TodoItemProps) {
   return (
     <>
       <div role="button" className="columns" onClick={() => toggleTodo(todo)}>
