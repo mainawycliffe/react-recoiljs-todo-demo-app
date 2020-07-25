@@ -179,8 +179,21 @@ type TodoItemProps = {
 };
 
 function TodoItem({ todo }: TodoItemProps) {
+  const setTodoList = useSetRecoilState(todoListState);
+
   function toggleTodo(todo: Todo) {
-    console.log(!todo.isDone);
+    setTodoList((state) => {
+      const todos = state.map((t) => {
+        if (todo.todo.toLowerCase() === t.todo.toLowerCase()) {
+          return {
+            ...t,
+            isDone: !t.isDone,
+          };
+        }
+        return t;
+      });
+      return [...todos];
+    });
   }
 
   return (
