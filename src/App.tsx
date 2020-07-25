@@ -107,7 +107,7 @@ function SearchBox() {
 
 function AddTodos() {
   const [todoInputValue, setTodoInputValue] = useState('');
-  const [todoExists, setTodoExists] = useState(false);
+  const [todoExistsErrorClass, setTodoExistsErrorClass] = useState('');
   const setTodoList = useSetRecoilState(todoListState);
 
   function addTodo({ key }: KeyboardEvent<HTMLInputElement>) {
@@ -118,7 +118,7 @@ function AddTodos() {
           (todo) => todo.todo.toLowerCase() === todoInputValue.toLowerCase()
         );
         if (alreadyExists.length > 0) {
-          setTodoExists(true);
+          setTodoExistsErrorClass('is-danger');
           return state;
         }
         return [...state, todo];
@@ -129,7 +129,7 @@ function AddTodos() {
 
   function onChange({ target: { value } }: ChangeEvent<HTMLInputElement>) {
     setTodoInputValue(value);
-    setTodoExists(false);
+    setTodoExistsErrorClass('');
   }
 
   return (
@@ -141,9 +141,7 @@ function AddTodos() {
             onKeyDown={addTodo}
             onChange={onChange}
             value={todoInputValue}
-            className={`input is-large is-rounded ${
-              todoExists ? 'is-danger' : ''
-            }`}
+            className={`input is-large is-rounded ${todoExistsErrorClass}`}
             placeholder="Buy Bread, Buy Milk ..."
           />
         </div>
