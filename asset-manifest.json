@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/react-recoiljs-todo-app/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/react-recoiljs-todo-app/static/js/main.254a884f.chunk.js",
-    "main.js.map": "/react-recoiljs-todo-app/static/js/main.254a884f.chunk.js.map",
-    "runtime-main.js": "/react-recoiljs-todo-app/static/js/runtime-main.67b46222.js",
-    "runtime-main.js.map": "/react-recoiljs-todo-app/static/js/runtime-main.67b46222.js.map",
-    "static/css/2.240f97b7.chunk.css": "/react-recoiljs-todo-app/static/css/2.240f97b7.chunk.css",
-    "static/js/2.0efdfc23.chunk.js": "/react-recoiljs-todo-app/static/js/2.0efdfc23.chunk.js",
-    "static/js/2.0efdfc23.chunk.js.map": "/react-recoiljs-todo-app/static/js/2.0efdfc23.chunk.js.map",
-    "index.html": "/react-recoiljs-todo-app/index.html",
-    "precache-manifest.826dee4f89c804939eccbaa1430107ac.js": "/react-recoiljs-todo-app/precache-manifest.826dee4f89c804939eccbaa1430107ac.js",
-    "service-worker.js": "/react-recoiljs-todo-app/service-worker.js",
-    "static/css/2.240f97b7.chunk.css.map": "/react-recoiljs-todo-app/static/css/2.240f97b7.chunk.css.map",
-    "static/css/main.5ecd60fb.chunk.css.map": "/react-recoiljs-todo-app/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.0efdfc23.chunk.js.LICENSE.txt": "/react-recoiljs-todo-app/static/js/2.0efdfc23.chunk.js.LICENSE.txt"
+    "main.css": "/react-recoiljs-todo-demo-app/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/react-recoiljs-todo-demo-app/static/js/main.92d0c612.chunk.js",
+    "main.js.map": "/react-recoiljs-todo-demo-app/static/js/main.92d0c612.chunk.js.map",
+    "runtime-main.js": "/react-recoiljs-todo-demo-app/static/js/runtime-main.74a91916.js",
+    "runtime-main.js.map": "/react-recoiljs-todo-demo-app/static/js/runtime-main.74a91916.js.map",
+    "static/css/2.240f97b7.chunk.css": "/react-recoiljs-todo-demo-app/static/css/2.240f97b7.chunk.css",
+    "static/js/2.0efdfc23.chunk.js": "/react-recoiljs-todo-demo-app/static/js/2.0efdfc23.chunk.js",
+    "static/js/2.0efdfc23.chunk.js.map": "/react-recoiljs-todo-demo-app/static/js/2.0efdfc23.chunk.js.map",
+    "index.html": "/react-recoiljs-todo-demo-app/index.html",
+    "precache-manifest.bc8cac00871bee0535b10cd3afbdaaa1.js": "/react-recoiljs-todo-demo-app/precache-manifest.bc8cac00871bee0535b10cd3afbdaaa1.js",
+    "service-worker.js": "/react-recoiljs-todo-demo-app/service-worker.js",
+    "static/css/2.240f97b7.chunk.css.map": "/react-recoiljs-todo-demo-app/static/css/2.240f97b7.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/react-recoiljs-todo-demo-app/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.0efdfc23.chunk.js.LICENSE.txt": "/react-recoiljs-todo-demo-app/static/js/2.0efdfc23.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.67b46222.js",
+    "static/js/runtime-main.74a91916.js",
     "static/css/2.240f97b7.chunk.css",
     "static/js/2.0efdfc23.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.254a884f.chunk.js"
+    "static/js/main.92d0c612.chunk.js"
   ]
 }
