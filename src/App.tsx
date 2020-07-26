@@ -1,9 +1,10 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import './../node_modules/bulma/css/bulma.min.css';
 import AddTodos from './app/AddTodos';
 import SearchBox from './app/SearchTodos';
 import ListTodos from './app/TodosView';
+import TodoStats from './app/Stats';
+import './../node_modules/bulma/css/bulma.min.css';
 
 export default function App() {
   return (
@@ -14,6 +15,9 @@ export default function App() {
           <div className="columns">
             <div className="column">
               <div className="columns is-multiline">
+                <div className="column is-full">
+                  <TodoStats />
+                </div>
                 <div className="column is-full">
                   <AddTodos />
                 </div>

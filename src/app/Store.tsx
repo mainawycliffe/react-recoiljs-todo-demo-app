@@ -29,3 +29,16 @@ export const filteredTodosState = selector({
     return todosList.filter((todo) => todo.todo.toLowerCase().includes(filter));
   },
 });
+
+export const todosStats = selector({
+  key: 'todoStats',
+  get: ({ get }) => {
+    const todos = get(todoListState);
+
+    return {
+      total: todos.length,
+      complete: todos.filter((todo) => todo.isDone === true).length,
+      ongoing: todos.filter((todo) => todo.isDone === false).length,
+    };
+  },
+});
