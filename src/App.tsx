@@ -37,6 +37,25 @@ const todoListState = atom<Todo[]>({
   default: defaultTodoList,
 });
 
+const todoQueryState = atom({
+  key: 'todoQueryState',
+  default: '', // no query
+});
+
+const filteredTodosState = selector({
+  key: 'searchedTodoState',
+  get: ({ get }) => {
+    const filter = get(todoQueryState);
+    const todosList = get(todoListState);
+    // return the whole list if query is not set
+    if (filter === '') {
+      return todosList;
+    }
+    // use the filter word to return only todos matches the query
+    return todosList.filter((todo) => todo.todo.toLowerCase().includes(filter));
+  },
+});
+
 export default function App() {
   return (
     <RecoilRoot>
@@ -90,6 +109,13 @@ function TopBar() {
 }
 
 function SearchBox() {
+  const setQuery = useSetRecoilState(todoQueryState);
+  const query = useRecoilValue(todoQueryState);
+
+  function onChange({ target: { value } }: ChangeEvent<HTMLInputElement>) {
+    setQuery(() => value);
+  }
+
   return (
     <>
       <div className="field is-fullwidth">
@@ -98,6 +124,8 @@ function SearchBox() {
             className="input is-large is-rounded"
             type="text"
             placeholder="Search for todos"
+            onChange={onChange}
+            value={query}
           />
         </div>
       </div>
@@ -151,7 +179,7 @@ function AddTodos() {
 }
 
 function ListTodos() {
-  const todoList = useRecoilValue(todoListState);
+  const todoList = useRecoilValue(filteredTodosState);
   const setTodoList = useSetRecoilState(todoListState);
 
   function toggleTodo(todo: Todo) {
